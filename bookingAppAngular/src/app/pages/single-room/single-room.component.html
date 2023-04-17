@@ -1,0 +1,49 @@
+<div class="row p-2">
+  <nav aria-label="breadcrumb ">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a
+          routerLink="/rooms"
+          class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          >Rooms</a
+        >
+      </li>
+      <li class="breadcrumb-item text-warning" aria-current="page">
+        Single Room
+      </li>
+    </ol>
+  </nav>
+</div>
+<div class="row">
+  <div class="col-8 mx-auto m-2">
+    <div class="card">
+      <img
+        src="{{ singleRoom?.images }}"
+        class="card-img-top"
+        alt="{{ singleRoom?.roomtype }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title pb-2 text-dark">
+          {{ singleRoom?.details }}
+        </h5>
+        <span>room id: {{ singleRoom?._id }}</span>
+        <h6 class="text-dark">price:{{ singleRoom?.price | currency }}</h6>
+        <button class="btn btn-warning">Get the room now</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 alert alert-secondary mx-auto m-2">
+    <h3 class="title text-capitalize text-center p-5">See the latest rooms</h3>
+    <div
+      class="alert"
+      *ngFor="let ro of rooms | slice : -3"
+      routerLink="/rooms/{{ ro._id }}"
+    >
+      <h4>
+        {{ ro.roomtype }} room
+        <span class="badge bg-warning">New</span>
+      </h4>
+      <button class="btn btn-outline-dark">view more.</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-12 p-2">
+    <h1 class="text-dark">Hotel Rooms</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque.
+    </p>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-12 col-md-4 my-2" *ngFor="let room of rooms">
+    <div class="card text-bg-light h-100">
+      <img
+        src="{{ room.images }}"
+        class="card-img-top"
+        alt="{{ room.roomtype }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Room type: {{ room.roomtype }}</h5>
+        <p class="card-text">Price: {{ room.price | currency }}</p>
+        <button class="btn btn-dark" routerLink="/rooms/{{ room._id }}">
+          Show more details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
