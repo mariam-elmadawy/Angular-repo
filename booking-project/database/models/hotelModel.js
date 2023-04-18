@@ -42,7 +42,11 @@ const hotelSchema = mongoose.Schema({
 hotelSchema.pre("findByIdAndDelete", async function () {
     await hotelModel.remove({ vendorId: this._id })
 })
-
+hotelSchema.virtual("myRooms", {
+    ref: "Rooms",
+    localField: "_id",
+    foreignField: "hotelId"
+})
 //connect by vendor using vemdors id
 const hotelModel = mongoose.model("Hotels", hotelSchema)
 module.exports = hotelModel

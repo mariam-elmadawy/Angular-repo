@@ -1,9 +1,12 @@
 const handler = require("../helper")
-const roomModel = require("../../database/models/roomModel")
+const roomModel = require("../../database/models/roomModel");
+const Handler = require("../helper");
 class Room {
     static newRoom = async (req, res) => {
         try {
-            const newRoom = await new roomModel(req.body )
+            const newRoom = await new roomModel(req.body)
+            const ext = handler.resFile(req)
+            newRoom.images = `${process.env.APPURL}${req.file.filename}.${ext}`
             await newRoom.save()
             handler.responseHandler(res, 200, true, newRoom, "room added successfully")
         } catch (e) { handler.responseHandler(res, 500, false, e.message, "error") }
@@ -44,5 +47,11 @@ class Room {
             handler.responseHandler(res, 200, true, [], "deleted all rooms")
         } catch (e) { handler.responseHandler(res, 500, false, e.message, "error") }
     };
+    static myRooms = async (req, res) => {
+        try {
+            await req.vendor.populate("myRooms")
+            Handler.responseHandler(res, 200, true, req.vendor.myRooms, "show single room")
+        } catch (e) { handler.responseHandler(res, 500, false, e.message, "error") }
+    }
 }
 module.exports = Room

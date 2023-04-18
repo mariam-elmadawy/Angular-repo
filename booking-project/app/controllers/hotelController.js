@@ -8,6 +8,8 @@ class Hotel {
                 vendorId: req.vendor._id,
                 ...req.body
             })
+            const ext = handler.resFile(req)
+            newHotel.images = `${process.env.APPURL}${req.file.filename}.${ext}`
             await newHotel.save()
             handler.responseHandler(res, 200, true, newHotel, "hotel added successfully")
         } catch (e) { handler.responseHandler(res, 500, false, e.message, "error") }

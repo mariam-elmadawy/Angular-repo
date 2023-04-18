@@ -67,6 +67,5 @@ class User {
     static profile = async (req, res) => {
         handler.responseHandler(res, 200, true, req.user, 'profile data')
     }
-
 }
 module.exports = User

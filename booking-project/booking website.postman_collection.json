@@ -3,7 +3,8 @@
 		"_postman_id": "711cb0ca-0802-433d-9ebd-645ee22702c2",
 		"name": "booking website",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26810463"
+		"_exporter_id": "26810463",
+		"_collection_link": "https://universal-capsule-994244.postman.co/workspace/Team-Workspace~cbbd8e36-5a7d-415d-8987-29af431236e3/collection/26810463-711cb0ca-0802-433d-9ebd-645ee22702c2?action=share&creator=26810463&source=collection_link"
 	},
 	"item": [
 		{
@@ -153,18 +154,54 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkYzU5NzczOGYyMjkyNGQ4OTJiYmQiLCJpYXQiOjE2ODE3Njk5MDJ9.-PlGTS5kNyB9q1qTezpl0okN7VYrDFrebWoUdXnbMOM",
+								"value": "{{hiltonToken}}",
 								"type": "text"
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"hotelname\":\"somabay camping \",\r\n    \"title\":\"somabay hotel\",\r\n    \"details\":\"lorem ipsum seaview and mountain view\",\r\n    \"city\":\"hurghada,redsea\",\r\n    \"location\":\"somabay\",\r\n    \"rate\":\"5\",\r\n    \"images\":\"https://images.pexels.com/photos/2096983/pexels-photo-2096983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hotelname",
+									"value": "Hilton royal hotel",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "hilton hotel",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id dignissimos dolorem officiis excepturi ",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "safaga red sea",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "downtown",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "4.5",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/C:/Users/mariam/Downloads/img2.jpeg"
+								},
+								{
+									"key": "vendorId",
+									"value": "643dc3c5738f22924d892baf",
+									"type": "text"
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{url}}hotel/",
@@ -456,13 +493,39 @@
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"hotelId\":\"643c575c1104e097db2d7e6a\",\r\n    \"roomnumber\":\"99\",\r\n    \"roomtype\":\"double\",\r\n    \"details\":\"double room of abc resort hotel street view with balcony\",\r\n    \"price\":\"500\",\r\n    \"images\":\"https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hotelId",
+									"value": "643ee7d72ec91d6b8d1905b4",
+									"type": "text"
+								},
+								{
+									"key": "roomtype",
+									"value": "double",
+									"type": "text"
+								},
+								{
+									"key": "roomnumber",
+									"value": "185",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "double room includes breakfast",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "780",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/C:/Users/mariam/Downloads/ro2.webp"
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{url}}room/",
@@ -480,7 +543,16 @@
 					"name": "show all rooms",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{url}}room/showAll",
+							"host": [
+								"{{url}}room"
+							],
+							"path": [
+								"showAll"
+							]
+						}
 					},
 					"response": []
 				},
@@ -512,6 +584,30 @@
 							"path": [
 								"show",
 								"643db20b76384eb9ed644458"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myRooms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{travcoToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}room//myRooms",
+							"host": [
+								"{{url}}room"
+							],
+							"path": [
+								"",
+								"myRooms"
 							]
 						}
 					},
@@ -580,6 +676,32 @@
 		{
 			"key": "token\n\n",
 			"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM5ZDA1ZjlmZTg3YjFmYzEzYjc5ODIiLCJpYXQiOjE2ODE1MTA4NzR9.sxScmaWXfWy47-cTdTOg9VQkKa20G_qxHi2F8mYxtmo",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "adminToken",
+			"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM5ZjAyNjY1OTBlMGM5YjI5MmYxOTEiLCJpYXQiOjE2ODE1MTg3ODZ9.cS-22FNmTRw089kifQMsC0cqgBkdCRT4jZsFgIVQCjw",
+			"type": "string"
+		},
+		{
+			"key": "travcoToken",
+			"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjNTcwZDExMDRlMDk3ZGIyZDdlNjUiLCJpYXQiOjE2ODE2NzYwNjd9.LdHpKB9C2EGGSYgrDJ61FhIEozQcm8xM5QIjmNm1k78",
+			"type": "string"
+		},
+		{
+			"key": "abcToken",
+			"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjNTc1YzExMDRlMDk3ZGIyZDdlNmEiLCJpYXQiOjE2ODE2NzYxNDB9.5yc3wkgIIN3H6KfrUzbdiF1MI5JH43eeH6nb2-VqNgY",
+			"type": "string"
+		},
+		{
+			"key": "hiltonToken",
+			"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkYzNjNTczOGYyMjkyNGQ4OTJiYWYiLCJpYXQiOjE2ODE3Njk0MzN9.KhpvIe0sCUi4jDDjbQtmkb2l0jDX2NO_-_8MyGnfM3w",
+			"type": "string"
+		},
+		{
+			"key": "somaToken",
+			"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkYzU5NzczOGYyMjkyNGQ4OTJiYmQiLCJpYXQiOjE2ODE3Njk5MDJ9.-PlGTS5kNyB9q1qTezpl0okN7VYrDFrebWoUdXnbMOM",
 			"type": "string"
 		}
 	]
