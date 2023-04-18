@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "711cb0ca-0802-433d-9ebd-645ee22702c2",
+		"name": "booking website",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26810463"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "logout admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM1ZTNhZDNjN2VhMzljYzUyZDc3NDIiLCJpYXQiOjE2ODEyNTM4MDl9.7-HVV2BP5dMKT09dk0ZVzk6R3NWL_RJjR59j_6C60Go",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}admin/logout",
+							"host": [
+								"{{url}}admin"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"mariamfarag\",\r\n    \"email\":\"mariamf@gmail.com\",\r\n    \"password\":\"mariam11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}admin/register",
+							"host": [
+								"{{url}}admin"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"username\":\"mariamfarag\",\r\n    \"email\":\"mariamf@gmail.com\",\r\n    \"password\":\"mariam11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}admin/login",
+							"host": [
+								"{{url}}admin"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin1234update\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}admin/show/6439f0266590e0c9b292f191",
+							"host": [
+								"{{url}}admin"
+							],
+							"path": [
+								"show",
+								"6439f0266590e0c9b292f191"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin1234update\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}admin/show/6439f0266590e0c9b292f191",
+							"host": [
+								"{{url}}admin"
+							],
+							"path": [
+								"show",
+								"6439f0266590e0c9b292f191"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hotels",
+			"item": [
+				{
+					"name": "add hotel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkYzU5NzczOGYyMjkyNGQ4OTJiYmQiLCJpYXQiOjE2ODE3Njk5MDJ9.-PlGTS5kNyB9q1qTezpl0okN7VYrDFrebWoUdXnbMOM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hotelname\":\"somabay camping \",\r\n    \"title\":\"somabay hotel\",\r\n    \"details\":\"lorem ipsum seaview and mountain view\",\r\n    \"city\":\"hurghada,redsea\",\r\n    \"location\":\"somabay\",\r\n    \"rate\":\"5\",\r\n    \"images\":\"https://images.pexels.com/photos/2096983/pexels-photo-2096983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}hotel/",
+							"host": [
+								"{{url}}hotel"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}hotel/showAll",
+							"host": [
+								"{{url}}hotel"
+							],
+							"path": [
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}hotel/showAll",
+							"host": [
+								"{{url}}hotel"
+							],
+							"path": [
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update hotel",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"images\":\"https://images.pexels.com/photos/2245411/pexels-photo-2245411.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}hotel/show/643db0dfbeaf2973ed5d4e58",
+							"host": [
+								"{{url}}hotel"
+							],
+							"path": [
+								"show",
+								"643db0dfbeaf2973ed5d4e58"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"mariamfarag\",\r\n    \"fullname\":\"mariam farag\",\r\n    \"email\":\"mariamf@gmail.com\",\r\n    \"password\":\"mariam123\",\r\n    \"age\":\"23\",\r\n    \"phone\":\"01234567890\",\r\n    \"gender\":\"female\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user/register",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM5ZDA1ZjlmZTg3YjFmYzEzYjc5ODIiLCJpYXQiOjE2ODE1MTA4NzR9.sxScmaWXfWy47-cTdTOg9VQkKa20G_qxHi2F8mYxtmo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"email\":\"mariamf@gmail.com\",\r\n    \"password\":\"mariam123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user/login",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM5ZDA1ZjlmZTg3YjFmYzEzYjc5ODIiLCJpYXQiOjE2ODE1MTA4NzR9.sxScmaWXfWy47-cTdTOg9VQkKa20G_qxHi2F8mYxtmo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}user/logout",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vendors",
+			"item": [
+				{
+					"name": "add vendors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"companyname\":\"somabay\",\r\n \"email\":\"somabay@gmail.com\",\r\n \"password\":\"somabay123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}vendor/register",
+							"host": [
+								"{{url}}vendor"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"companyname\":\"somabay\",\r\n \"email\":\"somabay@gmail.com\",\r\n \"password\":\"somabay123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}vendor/login",
+							"host": [
+								"{{url}}vendor"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my hotels",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjNTc1YzExMDRlMDk3ZGIyZDdlNmEiLCJpYXQiOjE2ODE2NzYxNDB9.5yc3wkgIIN3H6KfrUzbdiF1MI5JH43eeH6nb2-VqNgY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}hotel/myHotels",
+							"host": [
+								"{{url}}hotel"
+							],
+							"path": [
+								"myHotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}hotel/showAll",
+							"host": [
+								"{{url}}hotel"
+							],
+							"path": [
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all vendors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}vendor/showAll",
+							"host": [
+								"{{url}}vendor"
+							],
+							"path": [
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rooms",
+			"item": [
+				{
+					"name": "add room",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjNTcwZDExMDRlMDk3ZGIyZDdlNjUiLCJpYXQiOjE2ODE2NzYwNjd9.LdHpKB9C2EGGSYgrDJ61FhIEozQcm8xM5QIjmNm1k78",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hotelId\":\"643c575c1104e097db2d7e6a\",\r\n    \"roomnumber\":\"99\",\r\n    \"roomtype\":\"double\",\r\n    \"details\":\"double room of abc resort hotel street view with balcony\",\r\n    \"price\":\"500\",\r\n    \"images\":\"https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}room/",
+							"host": [
+								"{{url}}room"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all rooms",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "edit room",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjNTcwZDExMDRlMDk3ZGIyZDdlNjUiLCJpYXQiOjE2ODE2NzYwNjd9.LdHpKB9C2EGGSYgrDJ61FhIEozQcm8xM5QIjmNm1k78",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"images\":\"https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}room/show/643db20b76384eb9ed644458",
+							"host": [
+								"{{url}}room"
+							],
+							"path": [
+								"show",
+								"643db20b76384eb9ed644458"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reservation",
+			"item": [
+				{
+					"name": "add new reservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"643c59681104e097db2d7e92\",\r\n    \"roomId\":\"643c59301104e097db2d7e90\",\r\n    \"startDate\":\"1-may-2023\",\r\n    \"endDate\":\"5-may-2023\",\r\n    \"totalPrice\":\"5000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}reservation/",
+							"host": [
+								"{{url}}reservation"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:3000/api/",
+			"type": "string"
+		},
+		{
+			"key": "token\n\n",
+			"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM5ZDA1ZjlmZTg3YjFmYzEzYjc5ODIiLCJpYXQiOjE2ODE1MTA4NzR9.sxScmaWXfWy47-cTdTOg9VQkKa20G_qxHi2F8mYxtmo",
+			"type": "string"
+		}
+	]
+}
