@@ -3,7 +3,7 @@ const roomSchema = mongoose.Schema({
     hotelId: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: "Hotels"
+        ref: "hotels"
     },
     roomnumber: {
         type: String,
@@ -32,6 +32,10 @@ const roomSchema = mongoose.Schema({
         type: String
     }
 })
-
+// roomSchema.virtual('room', {
+//     ref: 'Hotels',
+//     localField: 'hotelId', // Of post collection
+//     foreignField: '_id',    // Of user collection
+// })
 const roomModel = mongoose.model("Rooms", roomSchema)
 module.exports = roomModel

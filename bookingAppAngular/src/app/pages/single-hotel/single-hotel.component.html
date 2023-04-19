@@ -1,0 +1,52 @@
+<div class="row p-2">
+  <nav aria-label="breadcrumb ">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a
+          routerLink="/hotels"
+          class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          >hotels</a
+        >
+      </li>
+      <li class="breadcrumb-item text-warning" aria-current="page">
+        Single hotel
+      </li>
+    </ol>
+  </nav>
+</div>
+<div class="row">
+  <div class="col-8 mx-auto m-2">
+    <div class="card">
+      <img
+        src="{{ singleHotel?.images }}"
+        class="card-img-top"
+        alt="{{ singleHotel?.roomtype }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title pb-2 text-dark">
+          {{ singleHotel?.title }}
+        </h5>
+        <span>hotel name: {{ singleHotel?.hotelname }}</span>
+        <p>{{ singleHotel?.details }}</p>
+        <h6 class="text-dark">location:{{ singleHotel?.location }}</h6>
+        <button
+          class="btn btn-warning"
+          routerLink="/hotels/Rooms/{{ singleHotel?._id }}"
+          (click)="test()"
+        >
+          Get your room now
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 alert alert-secondary mx-auto m-2">
+    <h3 class="title text-capitalize text-center p-5">See the latest hotels</h3>
+    <div class="alert" *ngFor="let hot of hotels">
+      <h4>
+        {{ hot.hotelname }} hotels
+        <span class="badge bg-warning">New</span>
+      </h4>
+      <button class="btn btn-outline-dark">view more.</button>
+    </div>
+  </div>
+</div>

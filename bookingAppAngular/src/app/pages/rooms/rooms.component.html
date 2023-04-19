@@ -16,10 +16,8 @@
       />
       <div class="card-body">
         <h5 class="card-title">Room type: {{ room.roomtype }}</h5>
-        <p class="card-text">Price: {{ room.price | currency }}</p>
-        <button class="btn btn-dark" routerLink="/rooms/{{ room._id }}">
-          Show more details
-        </button>
+        <p class="card-text">Price: {{ room.price }}</p>
+        <button class="btn btn-dark">Show more details</button>
       </div>
     </div>
   </div>

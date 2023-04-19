@@ -12,4 +12,7 @@ export class RoomsService {
   getSingleRoom(id: any): Observable<any> {
     return this.http.get(`http://localhost:3000/api/room/show/${id}`);
   }
+  getHotelRooms(id: any): Observable<any> {
+    return this.http.get(`http://localhost:3000/api/room/myRooms/${id}`);
+  }
 }

@@ -25,7 +25,7 @@ const roomRoutes = require("../routes/roomRoutes")
 app.use("/api/room/", roomRoutes)
 const reservationRoutes = require("../routes/reservationRoutes")
 app.use("/api/reservation/", reservationRoutes)
-app.all("*", (req, res) =>
-    Handler.responseHandler(res, 404, false, null, 'url not found')
-)
+// app.all("*", (req, res) =>
+//     Handler.responseHandler(res, 404, false, null, 'url not found')
+// )
 module.exports = app

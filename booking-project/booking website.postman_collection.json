@@ -192,9 +192,9 @@
 									"type": "text"
 								},
 								{
-									"key": "img",
+									"key": "images",
 									"type": "file",
-									"src": "/C:/Users/mariam/Downloads/img2.jpeg"
+									"src": "/D:/web course/nti-tutorials/s11/appAPI/public/0a075a88d9b8f0ab8ceda2445c844a97.jpg"
 								},
 								{
 									"key": "vendorId",
@@ -593,21 +593,16 @@
 					"name": "myRooms",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{travcoToken}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{url}}room//myRooms",
+							"raw": "{{url}}room//myRooms/643ee6452ec91d6b8d190598",
 							"host": [
 								"{{url}}room"
 							],
 							"path": [
 								"",
-								"myRooms"
+								"myRooms",
+								"643ee6452ec91d6b8d190598"
 							]
 						}
 					},

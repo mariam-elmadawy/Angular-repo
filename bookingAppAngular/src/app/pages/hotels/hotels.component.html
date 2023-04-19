@@ -1,7 +1,11 @@
 <div class="row mt-4">
   <div class="col-12 col-md-4 my-2" *ngFor="let hotel of hotels">
     <div class="card text-bg-light h-100">
-      <img src="{{ hotel.images }}" class="card-img-top h-75" alt="..." />
+      <img
+        src="http://localhost:3000/{{ hotel.images }}"
+        class="card-img-top h-75"
+        alt="..."
+      />
       <div class="card-body">
         <div class="d-flex justify-content-between align-content-enter">
           <div>
@@ -16,10 +20,11 @@
           </div>
         </div>
         <h6>{{ hotel.city }}</h6>
-        <p>Location:
-          {{ hotel.location }}</p>
+        <p>Location: {{ hotel.location }}</p>
         <p>{{ hotel.details }}</p>
-        <button class="btn btn-dark">More</button>
+        <button class="btn btn-dark" routerLink="/hotels/{{ hotel._id }}">
+          More
+        </button>
       </div>
     </div>
   </div>

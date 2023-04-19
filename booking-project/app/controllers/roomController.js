@@ -1,6 +1,6 @@
 const handler = require("../helper")
 const roomModel = require("../../database/models/roomModel");
-const Handler = require("../helper");
+
 class Room {
     static newRoom = async (req, res) => {
         try {
@@ -48,9 +48,10 @@ class Room {
         } catch (e) { handler.responseHandler(res, 500, false, e.message, "error") }
     };
     static myRooms = async (req, res) => {
+
         try {
-            await req.vendor.populate("myRooms")
-            Handler.responseHandler(res, 200, true, req.vendor.myRooms, "show single room")
+            let rooms = await roomModel.find({ hotelId: req.params.id });
+            handler.responseHandler(res, 200, true, rooms, "my rooms")
         } catch (e) { handler.responseHandler(res, 500, false, e.message, "error") }
     }
 }

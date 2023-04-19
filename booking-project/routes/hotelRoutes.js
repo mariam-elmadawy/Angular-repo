@@ -3,7 +3,7 @@ const hotelController = require("../app/controllers/hotelController")
 const vendorAuth = require("../app/middleware/vendorMiddleware")
 const upload = require('../app/middleware/uploadMiddleware')
 //add new hotel record
-router.post("/", vendorAuth, upload.single("img"), hotelController.newHotel)
+router.post("/", vendorAuth, upload.single("images"), hotelController.newHotel)
 router.get("/myHotels", vendorAuth, hotelController.myHotels)
 //show single and all hotels
 router.get("/showAll", hotelController.viewAllHotels)

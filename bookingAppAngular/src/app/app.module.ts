@@ -15,6 +15,7 @@ import { ReservationComponent } from './pages/reservation/reservation.component'
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { SingleRoomComponent } from './pages/single-room/single-room.component';
+import { SingleHotelComponent } from './pages/single-hotel/single-hotel.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SingleRoomComponent } from './pages/single-room/single-room.component';
     ProfileComponent,
     ErrorComponent,
     SingleRoomComponent,
+    SingleHotelComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

@@ -4,11 +4,10 @@ import { IndexComponent } from './pages/index/index.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HotelsComponent } from './pages/hotels/hotels.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
-import { RoomsComponent } from './pages/rooms/rooms.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ErrorComponent } from './pages/error/error.component';
-import { CardComponent } from './components/card/card.component';
+import { SingleHotelComponent } from './pages/single-hotel/single-hotel.component';
 import { SingleRoomComponent } from './pages/single-room/single-room.component';
 
 const routes: Routes = [
@@ -19,19 +18,17 @@ const routes: Routes = [
   },
   {
     path: 'hotels',
-    component: HotelsComponent,
+    children: [
+      { path: '', component: HotelsComponent },
+      { path: ':id', component: SingleHotelComponent },
+      { path: 'hotelRooms:id', component: SingleRoomComponent },
+    ],
   },
   {
     path: 'reservation',
     component: ReservationComponent,
   },
-  {
-    path: 'rooms',
-    children: [
-      { path: '', component: RoomsComponent },
-      { path: ':id', component: SingleRoomComponent },
-    ],
-  },
+
   {
     path: 'profile',
     component: ProfileComponent,
