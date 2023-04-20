@@ -9,12 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 export class SingleRoomComponent {
   rooms: any[] = [];
   id: any;
-
   constructor(
     private room: RoomsService,
     private _activatedRoute: ActivatedRoute
   ) {
-    // this.room.getHotelRooms('id').subscribe((res) => {
+    // this.room.getSingleRoom('id').subscribe((res) => {
     //   this.rooms = res.data;
     // });
     this._activatedRoute.paramMap.subscribe((params) => {
@@ -24,5 +23,9 @@ export class SingleRoomComponent {
         this.rooms = res.data;
       });
     });
+  }
+  addRoom(data: any) {
+    // console.log(data);
+    localStorage.setItem('room', JSON.stringify(data));
   }
 }

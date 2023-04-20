@@ -16,7 +16,7 @@ export class SingleHotelComponent {
     private _activatedRoute: ActivatedRoute
   ) {
     this.hotel.getAllHotels().subscribe((res) => {
-      this.hotel = res.data;
+      this.hotels = res.data;
     });
     this._activatedRoute.paramMap.subscribe((params) => {
       console.log(params);

@@ -1,19 +1,19 @@
-<!-- <div class="row p-2">
+<div class="row p-2">
   <nav aria-label="breadcrumb ">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a
-          routerLink="/rooms"
+          routerLink="/hotels"
           class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-          >Rooms</a
+          >Hotel</a
         >
       </li>
       <li class="breadcrumb-item text-warning" aria-current="page">
-        Single Room
+        Hotel Rooms
       </li>
     </ol>
   </nav>
-</div> -->
+</div>
 <div class="row">
   <div class="col-12 mx-auto m-2" *ngFor="let room of rooms">
     <div class="card">
@@ -28,7 +28,14 @@
         </h5>
         <span>room id: {{ room?._id }}</span>
         <h6 class="text-dark">price:{{ room?.price }}</h6>
-        <button class="btn btn-warning">Get the room now</button>
+        <button
+          id="{{ room?.details }}"
+          class="btn btn-warning"
+          routerLink="/reservation"
+          (click)="addRoom(rooms)"
+        >
+          Get the room now
+        </button>
       </div>
     </div>
   </div>

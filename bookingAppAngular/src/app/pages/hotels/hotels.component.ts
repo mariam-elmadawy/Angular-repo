@@ -11,6 +11,7 @@ export class HotelsComponent {
   constructor(private hotel: HotelsService) {
     this.hotel.getAllHotels().subscribe((res) => {
       this.hotels = res.data;
+      console.log(res);
     });
   }
 }

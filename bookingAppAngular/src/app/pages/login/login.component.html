@@ -1,1 +1,58 @@
-<p>login works!</p>
+<div class="row ms-auto p-5">
+  <h2>Login</h2>
+  <div class="alert alert-danger" *ngIf="errorMsg">{{ errorMsg }}</div>
+  <form #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
+    <!-- <div class="alert alert-danger">{{ loginForm.value | json }}</div> -->
+    <div class="row">
+      <div class="mb-3">
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          placeholder="enter your email"
+          [(ngModel)]="form.email"
+          #email="ngModel"
+          required
+          email
+        />
+        <div
+          class="alert alert-danger mt-1"
+          *ngIf="loginForm.submitted && email.invalid"
+        >
+          <div *ngIf="email.errors?.['required']">Email is required</div>
+          <div *ngIf="email.errors?.['email']">invalid email</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="enter your password"
+          [(ngModel)]="form.password"
+          #password="ngModel"
+          required
+          (input)="errorMsg = null"
+        />
+        <div
+          class="alert alert-danger mt-1"
+          *ngIf="password.invalid && (password.dirty || loginForm.submitted)"
+        >
+          <div *ngIf="password.errors?.['required']">Password is required</div>
+          <!-- <div *ngIf="password.errors?.['pattern']">
+            invalid password try with [a-z][A-Z] and numbers and symbols
+          </div> -->
+        </div>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-warning form-control">login</button>
+      </div>
+      <div class="mb-3">
+        <span class="text-center">Don't have an account?</span>
+        <button class="btn btn-dark form-control" routerLink="/register">
+          Register
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

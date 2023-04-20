@@ -40,15 +40,28 @@
             >reservation</a
           >
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" routerLinkActive="text-warning" routerLink="rooms"
             >rooms</a
           >
+        </li> -->
+        <li class="nav-item">
+          <button
+            class="btn btn-warning"
+            routerLink="login"
+            *ngIf="!global.isLogged"
+          >
+            Login
+          </button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="text-warning" routerLink="login"
-            >Login</a
+          <button
+            class="btn btn-warning"
+            *ngIf="global.isLogged"
+            (click)="logout()"
           >
+            Logout
+          </button>
         </li>
       </ul>
     </div>
