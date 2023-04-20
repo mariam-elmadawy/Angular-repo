@@ -114,15 +114,12 @@
 				},
 				{
 					"name": "show",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"admin1234update\"\r\n}",
+							"raw": "{\r\n   \"type\":\"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -130,13 +127,27 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}admin/show/6439f0266590e0c9b292f191",
+							"raw": "{{url}}admin/show/643c565c1104e097db2d7e60",
 							"host": [
 								"{{url}}admin"
 							],
 							"path": [
 								"show",
-								"6439f0266590e0c9b292f191"
+								"643c565c1104e097db2d7e60"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all admins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}admin",
+							"host": [
+								"{{url}}admin"
 							]
 						}
 					},
@@ -288,7 +299,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"mariamfarag\",\r\n    \"fullname\":\"mariam farag\",\r\n    \"email\":\"mariamf@gmail.com\",\r\n    \"password\":\"mariam123\",\r\n    \"age\":\"23\",\r\n    \"phone\":\"01234567890\",\r\n    \"gender\":\"female\"\r\n}",
+							"raw": "{\r\n    \"username\":\"yassinfarag\",\r\n    \"fullname\":\"yassin farag\",\r\n    \"email\":\"yassin@gmail.com\",\r\n    \"password\":\"yassin123\",\r\n    \"age\":\"23\",\r\n    \"phone\":\"01234567890\",\r\n    \"gender\":\"male\",\r\n    \"roles\":\"user\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -357,6 +368,50 @@
 							],
 							"path": [
 								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}user/showAll",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user/show/643c59681104e097db2d7e92",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"show",
+								"643c59681104e097db2d7e92"
 							]
 						}
 					},
@@ -471,6 +526,33 @@
 							],
 							"path": [
 								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update vendors",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"vendor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}vendor/show/643c570d1104e097db2d7e65",
+							"host": [
+								"{{url}}vendor"
+							],
+							"path": [
+								"show",
+								"643c570d1104e097db2d7e65"
 							]
 						}
 					},

@@ -25,6 +25,13 @@ const adminSchema = mongoose.Schema({
         trim: true,
         match: /^(?=.*\d)(?=.*[a-zA-Z]).{6,200}$/
     },
+
+    type: {
+        type: String,
+        enum: ['user', 'admin', 'vendor'],
+        default: 'admin'
+    },
+
     tokens: [
         {
             token: {

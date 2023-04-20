@@ -46,6 +46,13 @@ const userSchema = mongoose.Schema({
         lowercase: true,
         enum: ["male", "female"]
     },
+
+    type: {
+        type: String,
+        enum: ['user', 'admin', 'vendor'],
+        default: 'user'
+    },
+
     tokens: [
         {
             token: {

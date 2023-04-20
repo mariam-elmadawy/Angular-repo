@@ -11,7 +11,7 @@ require("../database/serverDB")
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
-app.use(express.static(path.join(__dirname, "../resources/public")))
+app.use(express.static(path.join(__dirname, "../public")))
 // app routes
 const adminRoutes = require("../routes/adminRoutes")
 app.use("/api/admin/", adminRoutes)
