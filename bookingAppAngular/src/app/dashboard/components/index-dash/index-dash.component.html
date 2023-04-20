@@ -1,1 +1,40 @@
-<p>index-dash works!</p>
+<section class="container p-3">
+  <h3>Admins Records</h3>
+  <div class="row p-3">
+    <button class="btn btn-danger col-5 ms-1" (click)="deleteAdmins(adminData)">
+      delete all
+    </button>
+    <button class="btn btn-danger col-5 ms-1" routerLink="/dashboard/register">
+      add admin
+    </button>
+  </div>
+  <table class="table table-bordered table-dark p-3">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>admin name</td>
+        <td>admin email</td>
+        <td>Actions</td>
+      </tr>
+    </thead>
+    <tbody *ngFor="let admin of adminData">
+      <tr>
+        <td>{{ admin._id }}</td>
+        <td>{{ admin.username }}</td>
+        <td>{{ admin.email }}</td>
+
+        <td>
+          <button
+            class="mx-3 btn btn-warning"
+            routerLink="/dashboard/edit/{{ admin._id }}"
+          >
+            Edit
+          </button>
+          <button class="mx-3 btn btn-danger" (click)="delAdmin(admin._id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

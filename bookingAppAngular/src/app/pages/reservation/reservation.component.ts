@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./reservation.component.css'],
 })
 export class ReservationComponent {
-  rooms: any;
+  rooms: any = [];
   reserv: string = '';
 
   constructor() {

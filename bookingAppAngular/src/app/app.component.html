@@ -1,5 +1,5 @@
-<app-navbar *ngIf="global.isNavbar"></app-navbar>
-<app-sidebar *ngIf="!global.isNavbar"></app-sidebar>
+<app-navbar *ngIf="global.isNavbar && !global.isDashNav"></app-navbar>
+<app-sidebar *ngIf="!global.isNavbar && global.isDashNav"></app-sidebar>
 <div class="container">
   <router-outlet></router-outlet>
 </div>

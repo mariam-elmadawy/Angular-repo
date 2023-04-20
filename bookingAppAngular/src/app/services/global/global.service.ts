@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class GlobalService {
   isLogged = false;
   isNavbar = true;
+  isDashNav = false;
   url = 'http://localhost:3000/api/';
   constructor(private http: HttpClient) {}
   userLogin(data: any): Observable<any> {

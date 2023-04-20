@@ -32,7 +32,7 @@
           id="{{ room?.details }}"
           class="btn btn-warning"
           routerLink="/reservation"
-          (click)="addRoom(rooms)"
+          (click)="addRoom(room?._id , room)"
         >
           Get the room now
         </button>

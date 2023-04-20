@@ -24,8 +24,11 @@ export class SingleRoomComponent {
       });
     });
   }
-  addRoom(data: any) {
+  addRoom(roomId: any, room: any) {
     // console.log(data);
-    localStorage.setItem('room', JSON.stringify(data));
+
+    // localStorage.setItem('room', JSON.stringify(data));
+    localStorage.setItem('roomId', roomId);
+    localStorage.setItem('room', JSON.stringify(room));
   }
 }

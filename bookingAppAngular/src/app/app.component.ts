@@ -8,6 +8,7 @@ import { GlobalService } from './services/global/global.service';
 })
 export class AppComponent {
   title = 'booking';
+  
   constructor(public global: GlobalService) {
     let tokens = localStorage.getItem('tokens');
     if (tokens) {

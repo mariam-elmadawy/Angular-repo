@@ -25,6 +25,7 @@ const routes: Routes = [
           { path: '', component: LoginComponent, data: { type: 'admin' } },
           { path: 'home', component: IndexDashComponent },
           { path: 'edit', component: EditDashComponent },
+          { path: 'register', component: RegisterComponent },
         ],
       },
       {
